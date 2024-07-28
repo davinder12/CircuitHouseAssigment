@@ -32,7 +32,7 @@ Objective: Develop an Android app that allows users to select their favorite gen
 
 ### Video Preview
 
-https://user-images.githubusercontent.com/75040026/215316872-972a5fc6-de28-4b08-8a93-673016e06c46.mp4
+https://drive.google.com/file/d/1OO1QTTZG13wSnFiI2pY3smoDM2j5bL3J/view?usp=sharing
 
 
 
