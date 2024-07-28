@@ -18,7 +18,8 @@ Objective: Develop an Android app that allows users to select their favorite gen
 4. Room Database
 5. Retrofit
  
-
+# Instruction 
+Minimum Api Version: 21 and Max Api Version: 34
 
 ## Screens:
 1. Home Screen
