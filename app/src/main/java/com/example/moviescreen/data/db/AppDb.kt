@@ -9,10 +9,10 @@ import androidx.room.TypeConverters
  */
 const val SCHEMA_VERSION = 4
 
-@TypeConverters(
-    ZonedDateTimeConverter::class,
-    InstantConverter::class
-)
+//@TypeConverters(
+//    ZonedDateTimeConverter::class,
+//    InstantConverter::class
+//)
 
 @Database(
     entities = [LocalGenre::class,LocalMovie::class],

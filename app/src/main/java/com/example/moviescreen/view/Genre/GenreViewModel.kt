@@ -22,7 +22,7 @@ class GenreViewModel @Inject constructor(private val movieRepository : MovieRepo
     val language = MutableLiveData<String>()
 
     val merchantResource = ResourceViewModel(language) {
-        movieRepository.getMovieList()
+        movieRepository.getGenreList()
     }
     val genresList = merchantResource.listData.map {
        it

@@ -1,6 +1,5 @@
 package com.example.moviescreen.data.network
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.DataSource
@@ -8,12 +7,10 @@ import androidx.paging.LivePagedListBuilder
 import androidx.paging.PageKeyedDataSource
 import androidx.paging.PagedList
 import com.example.moviescreen.R
-import com.example.moviescreen.data.models.ResponseValidator
 import com.example.moviescreen.utilitiesclasses.IListResource
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import retrofit2.Call
 import retrofit2.Response
 import java.io.IOException
@@ -92,8 +89,8 @@ abstract class NetworkListResourceBoundaryCallback<LocalType, RemoteType>(privat
     protected abstract fun mapToLocal(items: RemoteType): List<LocalType>
     protected abstract fun localStorage(items: List<LocalType>)
     protected abstract fun checkLocalDataBase(size:Int): List<LocalType>
-    protected abstract fun getResponseStatus(items: RemoteType): ResponseValidator
-    protected abstract fun sessionExpired()
+   // protected abstract fun getResponseStatus(items: RemoteType): ResponseValidator
+  //  protected abstract fun sessionExpired()
 
 
     private fun checkIfGenresExist(size:Int,callback: (List<LocalType>) -> Unit) {
@@ -120,12 +117,9 @@ abstract class NetworkListResourceBoundaryCallback<LocalType, RemoteType>(privat
                        networkStateBefore.postValue(NetworkState.success)
 
                        response.body()?.let {
-                           if (getResponseStatus(it).code == 2) sessionExpired()
-                           else {
-                               val localData = mapToLocal(it)
-                               callback.onResult(localData, null, params.requestedLoadSize + 1)
-                               localStorage(localData)
-                           }
+                           val localData = mapToLocal(it)
+                           callback.onResult(localData, null, params.requestedLoadSize + 1)
+                           localStorage(localData)
                        }
                    } else {
                        retry = { loadInitial(params, callback) }
@@ -169,12 +163,9 @@ abstract class NetworkListResourceBoundaryCallback<LocalType, RemoteType>(privat
                     when {
                         response.isSuccessful -> {
                             response.body()?.let {
-                                if (getResponseStatus(it).code == 2) sessionExpired()
-                                else {
-                                    val localData = mapToLocal(it)
-                                    callback.onResult(localData, params.key + 1)
-                                    localStorage(localData)
-                                }
+                                val localData = mapToLocal(it)
+                                callback.onResult(localData, params.key + 1)
+                                localStorage(localData)
                             }
 
                             networkState.postValue(NetworkState.success)

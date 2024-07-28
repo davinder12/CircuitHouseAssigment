@@ -1,8 +1,6 @@
 package com.example.moviescreen.view.Genre
 
-import android.opengl.Visibility
 import android.os.Bundle
-import android.view.View
 import androidx.activity.viewModels
 import com.example.moviescreen.R
 import com.example.moviescreen.databinding.ActivityMainBinding

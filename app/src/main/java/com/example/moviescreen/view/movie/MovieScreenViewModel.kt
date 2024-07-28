@@ -33,7 +33,7 @@ class MovieScreenViewModel @Inject constructor(private val movieRepository : Mov
     }
 
     val movieList = PagedListViewModel(pageNumber){
-        movieRepository.getMovieList2()
+        movieRepository.getMovieList()
     }
 
     fun getCount() :Int {

@@ -23,7 +23,7 @@ class MovieRepository @Inject constructor(
     private val localMovieCache: LocalMovieCache
 ) {
 
-    fun getMovieList() : IResource<LocalGenre>{
+    fun getGenreList() : IResource<LocalGenre>{
         return NetworkResource(appExecutors, object : IRetrofitNetworkRequestCallback.IRetrofitNetworkResourceCallback<LocalGenre, GenerList> {
             override fun createNetworkRequest(): Single<Response<GenerList>> {
                return movieApi.getGenerList();
@@ -48,21 +48,16 @@ class MovieRepository @Inject constructor(
         })
     }
 
-    fun getMovieList2(): IListResource<LocalMovie> {
+    fun getMovieList(): IListResource<LocalMovie> {
         return PagedListNetworkCall(object : PaginationList<LocalMovie, MovieList>(appExecutors) {
             override fun mapToLocal(items: MovieList): List<LocalMovie> {
                return items.results.map { LocalMovie.Mapper.from(items.page,it) }
-            }
-            override fun getResponseStatus(items: MovieList): ResponseValidator {
-                return ResponseValidator(200, "working")
             }
             override fun loadPage(page: Int): Call<MovieList> {
                 return movieApi.getMovieList(page = page)
             }
             override fun loadAfterPage(page: Int): Call<MovieList> {
                 return movieApi.getMovieList(page = page)
-            }
-            override fun sessionExpired() {
             }
             override fun localStorage(items: List<LocalMovie>) {
                 CoroutineScope(Dispatchers.IO).launch {
