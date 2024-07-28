@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MaterialBadgeTextView">
+        <attr name="mbtv_backgroundColor" format="color" />
+        <attr name="mbtv_border_width" format="dimension" />
+        <attr name="mbtv_border_color" format="color" />
+        <attr name="mbtv_border_alpha" format="float" />
+        <attr name="mbtv_type" format="enum">
+            <enum name="shadow_gradual" value="1" />
+            <enum name="shadow_alpha" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="EmptyRecyclerView">
+        <attr name="emptyView" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomTextView">
+        <attr name="fontG" format="string" />
+    </declare-styleable>
+
+
+    <declare-styleable name="CashView">
+        <attr name="txt_color" format="color" />
+        <attr name="cashPrice" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="ExpandableTextView">
+        <attr name="trimLength" format="integer" />
+    </declare-styleable>
+
+
+    <declare-styleable name="PinEntryEditText">
+        <attr name="pinAnimationType" format="enum">
+            <enum name="popIn" value="0" />
+            <enum name="fromBottom" value="1" />
+            <enum name="none" value="-1" />
+        </attr>
+        <attr name="pinWhite" format="boolean" />
+        <attr name="pinCharacterMask" format="string" />
+        <attr name="pinRepeatedHint" format="string" />
+        <attr name="pinLineStroke" format="dimension" />
+        <attr name="pinLineStrokeSelected" format="dimension" />
+        <attr name="pinCharacterSpacing" format="dimension" />
+        <attr name="pinTextBottomPadding" format="dimension" />
+        <attr name="pinLineColors" format="color" />
+        <attr name="pinBackgroundDrawable" format="reference" />
+        <attr name="pinBackgroundIsSquare" format="boolean" />
+    </declare-styleable>
+
+
+
+    <declare-styleable name="GraphViewXML">
+        <attr name="seriesData" format="string" />
+        <attr name="seriesType" format="string" />
+        <attr name="seriesTitle" format="string" />
+        <attr name="android:title" />
+        <attr name="seriesColor" format="color" />
+    </declare-styleable>
+
+</resources>

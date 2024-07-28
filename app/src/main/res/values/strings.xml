@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">MovieScreen</string>
+    <string name="network_error_forbidden">Permission denied</string>
+    <string name="network_error_unknown">Network Error</string>
+    <string name="NetworkState_retry">Retry</string>
+    <string name="payment_requires_authentication">Payment requires authentication…</string>
+    <string name="payment_failed">Payment failed</string>
+    <string name="EmptyRecyclerView_defaultText">No item Found.</string>
+    <string name="title_activity_bottom_dashboard">BottomDashboard</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Favorite Geners</string>
+    <string name="title_notifications">Favorite Movie</string>
+    <string name="title_activity_dash_board_screen">DashBoardScreen</string>
+    <string name="select_favorite_genres">Select Favorite Genres</string>
+    <string name="select_favorite_movies">Select Favorite Movies</string>
+    <string name="selected_Item">SelectedItem</string>
+    <string name="genreList">Genre List</string>
+    <string name="movieList">Movie List</string>
+
+
+
+</resources>
