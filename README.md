@@ -19,7 +19,9 @@ Objective: Develop an Android app that allows users to select their favorite gen
 5. Retrofit
  
 # Instruction 
-Minimum Api Version: 21 and Max Api Version: 34
+- Minimum Api Version: 21 and Max Api Version: 34
+- In this assignment, I am using the "TMDb API". Please verify that the access "**TOKEN**" in the Gradle file is active and not empty.
+   
 
 ## Screens:
 1. Home Screen
